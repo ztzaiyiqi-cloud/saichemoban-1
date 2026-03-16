@@ -7,19 +7,19 @@
 }
 
 :root {
-    --primary-color: #3498db;
-    --secondary-color: #2c3e50;
-    --accent-color: #e74c3c;
-    --bg-dark: #1a1a1a;
-    --bg-light: #f4f4f4;
-    --text-light: #ecf0f1;
-    --text-dark: #333;
+    --primary-color: #e67e22; /* 橙色 */
+    --secondary-color: #d35400; /* 深橙色，用于 hover 或强调 */
+    --accent-color: #2c3e50; /* 深色辅助，用于深色背景块 */
+    --bg-dark: #ffffff; /* 导航栏背景改为白色 */
+    --bg-light: #f9f9f9; /* 浅灰背景 */
+    --text-light: #333333; /* 浅色背景上的深色文字 */
+    --text-dark: #ffffff; /* 深色背景上的浅色文字 */
     --font-size-base: 16px;
 }
 
 body {
-    background-color: var(--bg-light);
-    color: var(--text-dark);
+    background-color: #ffffff; /* 整体背景改为白色 */
+    color: var(--text-light);
     line-height: 1.6;
     overflow-x: hidden;
 }
@@ -40,12 +40,12 @@ ul {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 5%;
-    background-color: var(--bg-dark);
-    color: var(--text-light);
+    background-color: #ffffff; /* 导航栏白色 */
+    color: var(--text-light); /* 导航栏文字深色 */
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* 阴影变淡 */
 }
 
 .logo {
@@ -72,14 +72,60 @@ ul {
 /* Hero Section */
 .hero {
     height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://source.unsplash.com/random/1920x1080/?technology,code');
-    background-size: cover;
-    background-position: center;
+    /* 移除深色遮罩，背景改为纯白或极淡的橙色渐变 */
+    background: linear-gradient(to bottom right, #ffffff, #fff5e6); 
+    /* background-size: cover; */ /* 不再需要背景图 */
+    /* background-position: center; */
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    color: var(--text-light);
+    color: var(--text-light); /* 文字改为深色 */
+    padding: 0 5%; 
+}
+
+.hero-container {
+    display: flex;
+    align-items: center; /* 垂直居中对齐 */
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+    gap: 2rem;
+    height: 100%; /* 确保容器高度占满 */
+}
+
+.hero-content {
+    flex: 1;
+    text-align: left;
+    /* 确保内容垂直居中 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end; /* 图片靠右 */
+    align-items: center;
+    height: 100%; /* 确保高度一致 */
+}
+
+.hero-image img {
+    max-width: 100%;
+    max-height: 80vh; /* 限制最大高度，防止溢出 */
+    width: auto;
+    object-fit: contain; /* 保持比例 */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    /* 移除浮动动画，保持对齐稳定 */
+    /* animation: float 6s ease-in-out infinite; */
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
 }
 
 .hero-content h1 {
@@ -95,14 +141,35 @@ ul {
     font-size: 1.2rem;
     margin-bottom: 2rem;
     max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+    /* margin-left: auto;  移除居中 */
+    /* margin-right: auto; 移除居中 */
 }
 
 .hero-buttons {
     display: flex;
     gap: 1rem;
-    justify-content: center;
+    justify-content: flex-start; /* 按钮靠左 */
+}
+
+/* Responsive for Hero */
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column-reverse; /* 手机端图片在上面或下面 */
+        text-align: center;
+    }
+    
+    .hero-content {
+        text-align: center;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-image img {
+        max-width: 80%; /* 手机端图片稍微小一点 */
+        margin-bottom: 20px;
+    }
 }
 
 .btn {
