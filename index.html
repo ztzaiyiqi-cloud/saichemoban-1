@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的个人主页 | 高级游戏开发者</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="logo">DevPortfolio</div>
+        <ul class="nav-links">
+            <li><a href="#home">首页</a></li>
+            <li><a href="#about">关于我</a></li>
+            <li><a href="#skills">技能</a></li>
+            <li><a href="#portfolio">作品集</a></li>
+            <li><a href="#contact">联系方式</a></li>
+        </ul>
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- 首页 Hero 区域 -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>你好，我是 <span class="highlight">高级游戏开发者</span></h1>
+            <p>专注于构建沉浸式 Web 游戏体验与高性能交互应用</p>
+            <div class="hero-buttons">
+                <a href="#portfolio" class="btn primary">查看作品</a>
+                <a href="#contact" class="btn secondary">联系我</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于我 -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">关于我</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>我是一名充满激情的高级游戏程序员，拥有丰富的 Web 开发经验。我热衷于将创意转化为代码，通过 HTML5 Canvas、WebGL 等技术创造令人惊叹的视觉效果和流畅的游戏体验。</p>
+                    <p>无论是 2D 像素风还是 3D 拟真赛车游戏，我都追求极致的性能和用户体验。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 技能 -->
+    <section id="skills" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">我的技能</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <i class="fab fa-js"></i>
+                    <h3>JavaScript / ES6+</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-html5"></i>
+                    <h3>HTML5 Canvas</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-gamepad"></i>
+                    <h3>Game Physics</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-react"></i>
+                    <h3>React / Vue</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-cube"></i>
+                    <h3>WebGL / Three.js</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-server"></i>
+                    <h3>Node.js</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 作品集 -->
+    <section id="portfolio" class="section">
+        <div class="container">
+            <h2 class="section-title">精选作品</h2>
+            <div class="portfolio-grid">
+                <!-- 项目 1 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-image" style="background-color: #2c3e50;">
+                        <i class="fas fa-car fa-3x" style="color: white;"></i>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>极速狂飙 (Endless Drive)</h3>
+                        <p>一款基于 HTML5 Canvas 的伪 3D 赛车游戏，拥有 F1 风格赛车与动态环境渲染。</p>
+                        <a href="#" class="btn-sm">查看详情</a>
+                    </div>
+                </div>
+                <!-- 项目 2 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-image" style="background-color: #e74c3c;">
+                        <i class="fas fa-flag-checkered fa-3x" style="color: white;"></i>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>竞技赛车</h3>
+                        <p>多人在线竞技赛车游戏原型，包含道具系统与物理碰撞引擎。</p>
+                        <a href="#" class="btn-sm">查看详情</a>
+                    </div>
+                </div>
+                <!-- 项目 3 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-image" style="background-color: #3498db;">
+                        <i class="fas fa-images fa-3x" style="color: white;"></i>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>智能图片抓取助手</h3>
+                        <p>集成百度 AI 识图功能的 Chrome 扩展程序，支持批量下载与智能分类。</p>
+                        <a href="#" class="btn-sm">查看详情</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系方式 -->
+    <section id="contact" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">联系我</h2>
+            <div class="contact-wrapper">
+                <form id="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="您的姓名" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="您的邮箱" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="留言内容" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn primary">发送消息</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 我的个人主页. All Rights Reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
